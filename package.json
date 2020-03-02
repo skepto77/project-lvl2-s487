@@ -1,0 +1,34 @@
+{
+  "name": "gendiff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skepto77/project-lvl2-s487.git"
+  },
+  "keywords": [
+    "difference",
+    "files",
+    "utility"
+  ],
+  "author": "Ilya Grachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skepto77/project-lvl2-s487/issues"
+  },
+  "homepage": "https://github.com/skepto77/project-lvl2-s487#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-babel": "^5.3.0"
+  }
+}
