@@ -10,3 +10,7 @@
 <h2>Comparing two json files</h2>
 <a href="https://asciinema.org/a/OQAwdmWxjFcfxGF1Ov3Wd5AjL" target="_blank"><img src="https://asciinema.org/a/OQAwdmWxjFcfxGF1Ov3Wd5AjL.svg" /></a>
 
+<h2>Comparing two json and two yml files</h2>
+<a href="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2" target="_blank"><img src="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2.svg" /></a>
+
+
