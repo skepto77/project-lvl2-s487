@@ -9,8 +9,9 @@ const genDiff = (file1, file2) => {
   const pathToFile1 = getPath(file1);
   const pathToFile2 = getPath(file2);
   const extension = path.extname(pathToFile1);
-  const obj1 = parser(extension, fs.readFileSync(pathToFile1));
-  const obj2 = parser(extension, fs.readFileSync(pathToFile2));
+  console.log(extension);
+  const obj1 = parser(extension, fs.readFileSync(pathToFile1, 'utf-8'));
+  const obj2 = parser(extension, fs.readFileSync(pathToFile2, 'utf-8'));
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const keys = [...keys1, ...keys2];

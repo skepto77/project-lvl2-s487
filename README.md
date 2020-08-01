@@ -13,4 +13,8 @@
 <h2>Comparing two json and two yml files</h2>
 <a href="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2" target="_blank"><img src="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2.svg" /></a>
 
+<h2>Comparing two json and two yml files</h2>
+<a href="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2" target="_blank"><img src="https://asciinema.org/a/7sYzXalecQ28s6F0UYedjxLu2.svg" /></a>
 
+<h2>Comparing two ini files</h2>
+<a href="https://asciinema.org/a/iHCcWlCjtPxb19XbH9c6iugyh" target="_blank"><img src="https://asciinema.org/a/iHCcWlCjtPxb19XbH9c6iugyh.svg" /></a>
