@@ -18,3 +18,6 @@
 
 <h2>Comparing two ini files</h2>
 <a href="https://asciinema.org/a/iHCcWlCjtPxb19XbH9c6iugyh" target="_blank"><img src="https://asciinema.org/a/iHCcWlCjtPxb19XbH9c6iugyh.svg" /></a>
+
+<h2>Comparing two treelike files</h2>
+<script id="asciicast-vbqwBsiMMkF5RoxzUkk6235WD" src="https://asciinema.org/a/vbqwBsiMMkF5RoxzUkk6235WD.js" async></script>
