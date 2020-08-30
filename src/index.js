@@ -22,15 +22,17 @@ const types = [
   },
   {
     check: (key, obj1, obj2) => _.has(obj1, key) && !_.has(obj2, key),
-    type: (key, obj1, obj2) => ({ type: 'deleted', key, value: obj1[key] }),
+    type: (key, obj1) => ({ type: 'deleted', key, value: obj1[key] }),
   },
   {
     check: (key, obj1, obj2) => obj1[key] === obj2[key],
-    type: (key, obj1, obj2) => ({ type: 'unchanged', key, value: obj1[key] }),
+    type: (key, obj1) => ({ type: 'unchanged', key, value: obj1[key] }),
   },
   {
     check: (key, objBefore, objAfter) => objBefore[key] !== objAfter[key],
-    type: (key, obj1, obj2) => ({ type: 'changed', key, valueFirst: obj1[key], valueSecondary: obj2[key] }),
+    type: (key, obj1, obj2) => ({
+      type: 'changed', key, valueFirst: obj1[key], valueSecondary: obj2[key],
+    }),
   },
 ];
 
