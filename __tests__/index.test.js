@@ -17,8 +17,5 @@ const data = [
 
 test.each(data)('genDiff(%s, %s, %s)', (before, after, format, result) => {
   const res = fs.readFileSync(getFixturePath(`${result}.txt`), 'utf-8');
-  // console.log(before);
-  // console.log(after);
-  // console.log(result);
   expect(genDiff(before, after, format)).toEqual(res);
 });

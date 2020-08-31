@@ -25,3 +25,5 @@
 <h2>Result of compare in plain format</h2>
 <a href="https://asciinema.org/a/lIW1eupOl0rP7HWKqB9JtAT2C" target="_blank"><img src="https://asciinema.org/a/lIW1eupOl0rP7HWKqB9JtAT2C.svg" /></a>
 
+<h2>Result of compare in json format</h2>
+<a href="https://asciinema.org/a/02IxYhDbe6U3d7VmK7yB6YTuV" target="_blank"><img src="https://asciinema.org/a/02IxYhDbe6U3d7VmK7yB6YTuV.svg" /></a>
