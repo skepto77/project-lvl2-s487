@@ -21,3 +21,6 @@
 
 <h2>Comparing two treelike files</h2>
 <a href="https://asciinema.org/a/vbqwBsiMMkF5RoxzUkk6235WD" target="_blank"><img src="https://asciinema.org/a/vbqwBsiMMkF5RoxzUkk6235WD.svg" /></a>
+
+<h2>Result of compare in plain format</h2>
+<a href="https://asciinema.org/a/lIW1eupOl0rP7HWKqB9JtAT2C" target="_blank"><img src="https://asciinema.org/a/lIW1eupOl0rP7HWKqB9JtAT2C.svg" /></a>

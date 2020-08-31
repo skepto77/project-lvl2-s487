@@ -52,7 +52,9 @@ const makeDiff = (obj1, obj2) => {
 const genDiff = (file1, file2, format) => {
   const obj1 = getData(file1);
   const obj2 = getData(file2);
+  //console.log(makeDiff(obj1, obj2));
   const result = render(makeDiff(obj1, obj2), format);
+  //console.log(result);
   return result;
 };
 
