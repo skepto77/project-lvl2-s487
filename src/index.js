@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
 import parser from './parsers';
+import render from './formatters';
 
 const getPath = (file) => path.join(__dirname, '..', '__tests__', '__fixtures__', file);
 
@@ -48,39 +49,10 @@ const makeDiff = (obj1, obj2) => {
   return keys;
 };
 
-const tab = (depth) => '  '.repeat(depth);
-
-const stringify = (item, depth) => {
-  if (!_.isObject(item)) {
-    return `${item}`;
-  }
-  return `{\n${[...Object.keys(item)].map((key) => `${tab(depth + 3)}${key}: ${item[key]}`)}\n${tab(depth + 1)}}`;
-};
-
-const render = (ast, depth = 1) => {
-  const mapped = ast.map((item) => {
-    switch (item.type) {
-      case 'parent':
-        return `${tab(depth)}  ${item.key}: ${stringify(render(item.children, depth + 2))}`;
-      case 'added':
-        return `${tab(depth)}+ ${item.key}: ${stringify(item.value, depth)}`;
-      case 'deleted':
-        return `${tab(depth)}- ${item.key}: ${stringify(item.value, depth)}`;
-      case 'unchanged':
-        return `${tab(depth)}  ${item.key}: ${stringify(item.value, depth)}`;
-      case 'changed':
-        return `${tab(depth)}- ${item.key}: ${stringify(item.valueFirst, depth)}\n${tab(depth)}+ ${item.key}: ${stringify(item.valueSecondary, depth)}`;
-      default:
-        throw Error(`${item.type} is uncorrect`);
-    }
-  });
-  return `{\n${mapped.join('\n')}\n${tab(depth - 1)}}`;
-};
-
-const genDiff = (file1, file2) => {
+const genDiff = (file1, file2, format) => {
   const obj1 = getData(file1);
   const obj2 = getData(file2);
-  const result = render(makeDiff(obj1, obj2));
+  const result = render(makeDiff(obj1, obj2), format);
   return result;
 };
 
