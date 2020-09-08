@@ -21,7 +21,7 @@ const render = (ast, depth = 1) => {
       case 'unchanged':
         return `${tab(depth)}  ${item.key}: ${stringify(item.value, depth)}`;
       case 'changed':
-        return `${tab(depth)}- ${item.key}: ${stringify(item.valueFirst, depth)}\n${tab(depth)}+ ${item.key}: ${stringify(item.valueSecondary, depth)}`;
+        return `${tab(depth)}- ${item.key}: ${stringify(item.value1, depth)}\n${tab(depth)}+ ${item.key}: ${stringify(item.value2, depth)}`;
       default:
         throw Error(`${item.type} is uncorrect`);
     }

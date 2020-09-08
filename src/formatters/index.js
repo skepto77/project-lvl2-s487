@@ -1,11 +1,11 @@
-import def from './default';
+import common from './common';
 import plain from './plain';
 import json from './json';
 
 const mapping = {
-  default: def,
+  common,
   plain,
   json,
 };
 
-export default (data, format = 'default') => mapping[format](data);
+export default (data, format = 'common') => mapping[format](data);

@@ -1,15 +1,13 @@
 import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
-import parser from './parsers';
+import parse from './parsers';
 import render from './formatters';
 
-const getPath = (file) => path.join(__dirname, '..', '__tests__', '__fixtures__', file);
-
-const getData = (file) => {
-  const pathToFile = getPath(file);
-  const extension = path.extname(pathToFile);
-  return parser(extension, fs.readFileSync(pathToFile, 'utf-8'));
+const getData = (relativePath) => {
+  const absolutePath = path.resolve(process.cwd(), relativePath);
+  const extension = path.extname(absolutePath);
+  return parse(extension, fs.readFileSync(absolutePath, 'utf-8'));
 };
 
 const types = [
@@ -32,7 +30,7 @@ const types = [
   {
     check: (key, objBefore, objAfter) => objBefore[key] !== objAfter[key],
     type: (key, obj1, obj2) => ({
-      type: 'changed', key, valueFirst: obj1[key], valueSecondary: obj2[key],
+      type: 'changed', key, value1: obj1[key], value2: obj2[key],
     }),
   },
 ];
@@ -42,16 +40,16 @@ const getType = (key, obj1, obj2) => types.find(({ check }) => check(key, obj1, 
 const makeDiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
-  const keys = _.union(keys1, keys2).reduce((acc, key) => {
+  const keys = _.union(keys1, keys2).map((key) => {
     const { type } = getType(key, obj1, obj2);
-    return [...acc, type(key, obj1, obj2, makeDiff)];
-  }, []);
+    return type(key, obj1, obj2, makeDiff);
+  });
   return keys;
 };
 
-const genDiff = (file1, file2, format) => {
-  const obj1 = getData(file1);
-  const obj2 = getData(file2);
+const genDiff = (pathToFile1, pathToFile2, format) => {
+  const obj1 = getData(pathToFile1);
+  const obj2 = getData(pathToFile2);
   const result = render(makeDiff(obj1, obj2), format);
   return result;
 };
